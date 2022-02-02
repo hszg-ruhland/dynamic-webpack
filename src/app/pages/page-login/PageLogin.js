@@ -7,13 +7,13 @@ import {Page} from '../Page.js'
 
 const page_login_markup =
 `<div id="page-login" class="app-page">
-    <nav class="app-header navbar navbar-dark bg-dark">
+    <nav id="page-login-header" class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">Sustainability Test Lab</span>
         </div>
     </nav>
 
-    <div class="app-frame" class="container-fluid">
+    <div id="page-login-content" class="container-fluid">
         <div id="page-login-form" class="p-4">
         </div>
         <div id="page-login-image" class="p-4">
