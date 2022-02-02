@@ -1,13 +1,15 @@
-//import { JSEncrypt } from "jsencrypt";
+// npm packages used:
+// jsencrypt : dynamic
+// lz-string
+// base-x
+// safe-buffer
+// leaflet
+// micro-mustache
 
 
-//window.Buffer = window.Buffer || require('buffer').Buffer;
-//import { encoder } from 'basex-encoder';
 import { compress, decompress } from 'lz-string';
-//const doT = require('dot');
 
 const BASE58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
-//const bs58 = require('base-x')(BASE58);
 import Basex from 'base-x';
 import { Buffer } from 'safe-buffer';
 

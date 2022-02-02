@@ -12,7 +12,7 @@ $page-login-text-color: black;
         color: $AppHeaderColor !important;
         background-color: $AppHeaderBackgroundColor !important;
     }
-    .app-frame{
+    &-content{
         position: absolute;
         top: $AppHeaderHeight;
         left: 0;
