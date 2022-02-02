@@ -1,0 +1,60 @@
+// Gradient Background: see https://cssgradient.io
+@import '../../_constants';
+
+#page-map{ 
+    .app-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $AppHeaderHeight !important;
+        color: $AppHeaderColor !important;
+        background-color: $AppHeaderBackgroundColor !important;
+    }
+     
+    .app-header-back-button {
+        background-image: url(../../images/fontawesome-white-arrow-left-solid.svg);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-color: transparent;
+    }
+
+    .map-area {
+        position: absolute;
+        background-color: black;
+        top: $AppHeaderHeight;
+        left: 0;
+        right: 0;
+        bottom: 0; 
+    }
+      
+    .leaflet-area {
+        position: relative;
+        background-color: black;
+        width: 100%;
+        height: 100%; 
+    }
+    
+    &-change-view-button{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: darkblue;
+        z-index: 400;
+    }
+    &-change-view-button.sattelite{
+        background-image: url("../../images/satellite.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    &-change-view-button.map{
+        background-image: url("../../images/map.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

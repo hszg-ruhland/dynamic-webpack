@@ -1,0 +1,35 @@
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+html{
+  font-size: 1.2em;
+}
+
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  overflow: hidden;
+}
+
+.app-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  box-sizing: border-box;
+  background-color: lightgrey;
+  color: black;
+  overflow: hidden;
+}
+
+.app-invisible {
+  display: none!important;
+}
+
+/* Bootstrap overrides */
+.btn-primary { background-color: darkgreen !important; }

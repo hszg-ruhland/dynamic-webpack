@@ -1,0 +1,102 @@
+@import '../../_constants';
+
+#page-dashboard{
+    .app-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $AppHeaderHeight !important;
+        color: $AppHeaderColor !important;
+        background-color: $AppHeaderBackgroundColor !important;
+    }
+    .app-header-menu-button {
+        background-image: url(../../images/fontawesome-white-bars-solid.svg);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-color: transparent;
+    }
+    .app-header-user-button {
+        background-image: url(../../images/fontawesome-white-user-regular.svg);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-color: transparent;
+    }
+    &-menu-user-dropdown{
+        position: relative;
+    }
+    .app-side-menu{
+        width: $AppDashboardSideMenuWidth;
+        position: absolute;
+        top: $AppHeaderHeight;
+        left: 0;
+        bottom: 0;
+        background-color: $AppDashboardSideMenuBackgroundColor;
+        color: $AppDashboardSideMenuColor;    
+        z-index: +2;
+    } 
+    .app-dashboard{
+        position: absolute;
+        top: $AppHeaderHeight;
+        left: $AppDashboardSideMenuWidth;
+        bottom: 0;
+        right: 0;
+        background-color: $AppDashboardBackgroundColor;
+        color: $AppDashboardColor;  
+        display: grid;
+        grid-gap: 10px;
+        box-sizing: border-box;  
+        overflow-y: auto;
+        padding: 10px;          
+    }
+    
+    .cell{
+        background-color: $AppDashboardCellBackgroundColor;
+        color: $AppDashboardCellColor;
+    }
+}
+
+@media (min-width: $AppScreenMedium) {
+    /* Define when screen-width is larger than DesktopSize */
+    /* I want to have 3 columns of cells */
+    #page-dashboard {
+        .app-header-menu-button {
+            display: none;
+        }
+    }
+}
+@media (min-width: $AppScreenSmall) and (max-width: ($AppScreenMedium - 1)) {
+    /* Define when screen-width is less than DesktopSize and larger than Tablet Size */
+    #page-dashboard {
+        .app-side-menu {
+            transform: translateX(-100%);
+            transition: transform .5s ease-in-out;
+        }    
+        .app-side-menu.open {
+            transform: translateX(0);
+        }
+        .app-dashboard {
+            left: 0;
+        }
+    }
+}
+@media (max-width: ($AppScreenSmall - 1)){
+    /* Define when screen-width is less than Tablet Size */
+    #page-dashboard {
+        .app-side-menu {
+            transform: translateX(-100%);
+            transition: transform .5s ease-in-out;
+        }    
+        .app-side-menu.open {
+            transform: translateX(0);
+        }
+        .app-dashboard {
+            left: 0;
+        }
+    }
+}
+
