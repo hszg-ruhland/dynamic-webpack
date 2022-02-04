@@ -1,0 +1,66 @@
+@import '../../_constants';
+
+$page-login-text-color: black;
+
+#page-login{    
+    &-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $AppHeaderHeight !important;
+        color: $AppHeaderColor !important;
+        background-color: $AppHeaderBackgroundColor !important;
+    }
+    &-content{
+        position: absolute;
+        top: $AppHeaderHeight;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-sizing: border-box;
+    } 
+    &-form{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 50%;
+        bottom: 0;
+        background-color: white;
+        color: $page-login-text-color;
+    }
+    &-image{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 0;
+        bottom: 0;
+        background-color: lightgreen;
+        background-image: url(../../images/skyline.svg);
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: ($AppScreenMedium - 1)) {
+    #page-login-form {
+        right: 0;
+    }
+    #page-login-image {
+        display: none;
+    }
+}
+
+/*
+@media (max-width: ($AppScreenSmall - 1)) {
+}
+@media (min-width: $AppScreenSmall) and (max-width: ($AppScreenMedium - 1)) {
+}
+@media (min-width: $AppScreenMedium) and (max-width: ($AppScreenLarge - 1)) {
+}
+@media (min-width: $AppScreenLarge) and (max-width: ($AppScreenExtraLarge - 1)) {
+}
+@media (min-width: $AppScreenExtraLarge) {
+}
+*/
