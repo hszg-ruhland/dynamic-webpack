@@ -12,8 +12,6 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
 
-// for cleaning dist directory
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // for building compression files .gz
 const CompressionPlugin = require("compression-webpack-plugin");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');

@@ -3,6 +3,7 @@
 // destination is ./dist
 // compression article: https://medium.com/@poshakajay/heres-how-i-reduced-my-bundle-size-by-90-2e14c8a11c11
 
+// external in package.json use npm rimraf to cleanup dist directory
 // use dynamic lazy loading for leaflet
 // scss should be compiled in vsc
 
@@ -12,8 +13,6 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
 
-// for cleaning dist directory
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // for building compression files .gz
 const CompressionPlugin = require("compression-webpack-plugin");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
@@ -22,7 +21,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const plugins = [];
 
-plugins.push(new CleanWebpackPlugin());
 plugins.push(new CompressionPlugin());
 plugins.push(new HtmlWebpackPlugin({
   inject: false,
@@ -39,12 +37,7 @@ plugins.push(new HtmlWebpackPlugin({
     </html>
   `
 }));
-/*
-plugins.push(new CspHtmlWebpackPlugin({
-  'script-src': '',
-  'style-src': ''
-}));
-*/
+
 
 plugins.push(new BundleAnalyzerPlugin());
 

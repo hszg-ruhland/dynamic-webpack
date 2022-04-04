@@ -6,15 +6,12 @@
 const path = require('path');
 // for automatically create index.html with template 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// for cleaning dist directory
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // for building compression files .gz
 const CompressionPlugin = require("compression-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const plugins = [];
 
-plugins.push(new CleanWebpackPlugin());
 plugins.push(new CompressionPlugin());
 plugins.push(new HtmlWebpackPlugin({
   title: 'Progressive Web Application Demo',
