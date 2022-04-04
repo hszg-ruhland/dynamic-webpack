@@ -20,7 +20,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const plugins = [];
 
-plugins.push(new CleanWebpackPlugin());
 plugins.push(new CompressionPlugin());
 plugins.push(new HtmlWebpackPlugin({
   inject: false,
@@ -60,88 +59,80 @@ module.exports = {
   },
   plugins,
   module: {
-        rules: [
-          {
-            test: /\.css$/i,
-            use: [{
-              loader: "style-loader",
-              options: {
-                attributes: {
-                  nonce: "appnonce",
-                },
-              },
-            }, "css-loader"],
-          }, 
-            {
-               test: /\.(png|jpg|gif|svg)$/i,
-               type: 'asset/inline',
-/*               use: [
-                {
-                   loader: 'url-loader',
-                   options: {
-                     limit: 20000,
-                   },
-                }],
-*/
-            },        
-        ]
-  },
-  optimization: {
-      runtimeChunk: 'single',
-      splitChunks: {
-        chunks: 'all',
-        maxInitialRequests: Infinity,
-        minSize: 0,
-        cacheGroups: {
-          baseVendor: {
-            test: /[\\/]node_modules[\\/](style-loader|css-loader|base64-js|dot|lz-string)[\\/]/,
-            name: "base"
+    rules: [
+      {
+        test: /\.(scss|css)$/i,
+        use: [{
+          loader: "style-loader",
+          options: {
+            attributes: {
+              nonce: "appnonce",
+            },
           },
-          encodeVendor: {
-            test: /[\\/]node_modules[\\/](buffer|ieee754|basex-encoder)[\\/]/,
-            name: "encode"
-          },
-          bootstrapVendor: {
-            test: /[\\/]node_modules[\\/](bootstrap)[\\/]/,
-            name: "bootstrap"
-          },
-        },
+        }, "css-loader", "sass-loader"],
+      }, 
+      {
+       test: /\.(png|jpg|gif|svg)$/i,
+       type: 'asset/inline',
+      },        
+    ]
+},
+optimization: {
+  runtimeChunk: 'single',
+  splitChunks: {
+    chunks: 'all',
+    maxInitialRequests: Infinity,
+    minSize: 0,
+    cacheGroups: {
+      baseVendor: {
+        test: /[\\/]node_modules[\\/](style-loader|css-loader|lz-string)[\\/]/,
+        name: "base"
       },
-  },    
+      encodeVendor: {
+        test: /[\\/]node_modules[\\/](safe-buffer|buffer|ieee754|base-x|base64-js)[\\/]/,
+        name: "encode"
+      },
+      bootstrapVendor: {
+        test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
+        name: "bootstrap"
+      },
+    },
+  },
+},    
 }
 
 /*
-          vendor: {
-            test: /[\\/]node_modules[\\/](!buffer)(!basex-encoder)(!base64-js)(!ieee754)(!jsencrypt)[\\/]/,
-            name(module) {
-              // get the name. E.g. node_modules/packageName/not/this/part.js
-              // or node_modules/packageName
-              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-  
-              // npm package names are URL-safe, but some servers don't like @ symbols
-              return `npm.${packageName.replace('@', '')}`;
-            },
-          },
+      vendor: {
+        test: /[\\/]node_modules[\\/](!buffer)(!basex-encoder)(!base64-js)(!ieee754)(!jsencrypt)[\\/]/,
+        name(module) {
+          // get the name. E.g. node_modules/packageName/not/this/part.js
+          // or node_modules/packageName
+          const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+          // npm package names are URL-safe, but some servers don't like @ symbols
+          return `npm.${packageName.replace('@', '')}`;
+        },
+      },
 */
 
 /* for vendor specific output 
 cacheGroups: {
-      reactVendor: {
-        test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-        name: "reactvendor"
-      },
-      utilityVendor: {
-        test: /[\\/]node_modules[\\/](lodash|moment|moment-timezone)[\\/]/,
-        name: "utilityVendor"
-      },
-      bootstrapVendor: {
-        test: /[\\/]node_modules[\\/](react-bootstrap)[\\/]/,
-        name: "bootstrapVendor"
-      },
-      vendor: {
-        test: /[\\/]node_modules[\\/](!react-bootstrap)(!lodash)(!moment)(!moment-timezone)[\\/]/,
-        name: "vendor"
-      },
-    },
+  reactVendor: {
+    test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+    name: "reactvendor"
+  },
+  utilityVendor: {
+    test: /[\\/]node_modules[\\/](lodash|moment|moment-timezone)[\\/]/,
+    name: "utilityVendor"
+  },
+  bootstrapVendor: {
+    test: /[\\/]node_modules[\\/](react-bootstrap)[\\/]/,
+    name: "bootstrapVendor"
+  },
+  vendor: {
+    test: /[\\/]node_modules[\\/](!react-bootstrap)(!lodash)(!moment)(!moment-timezone)[\\/]/,
+    name: "vendor"
+  },
+},
 */
 

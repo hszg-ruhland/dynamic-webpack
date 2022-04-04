@@ -57,7 +57,7 @@ module.exports = {
   module: {
         rules: [
           {
-            test: /\.css$/i,
+            test: /\.(scss|css)$/i,
             use: [{
               loader: "style-loader",
               options: {
@@ -65,20 +65,12 @@ module.exports = {
                   nonce: "appnonce",
                 },
               },
-            }, "css-loader"],
+            }, "css-loader", "sass-loader"],
           }, 
-            {
-               test: /\.(png|jpg|gif|svg)$/i,
-               type: 'asset/inline',
-/*               use: [
-                {
-                   loader: 'url-loader',
-                   options: {
-                     limit: 20000,
-                   },
-                }],
-*/
-            },        
+          {
+           test: /\.(png|jpg|gif|svg)$/i,
+           type: 'asset/inline',
+          },        
         ]
   },
   optimization: {

@@ -11,7 +11,7 @@
     "clean-pwa": "rimraf dist-pwa",
     "dev": "npm run clean-dev && webpack --mode=development --config webpack.dev.js",
     "pro": "npm run clean-pro && webpack --mode=production --config webpack.pro.js",
-    "pwa": "npm run clean-pro && webpack --mode=production --config webpack.pwa.js"
+    "pwa": "npm run clean-pwa && webpack --mode=production --config webpack.pwa.js"
   },
   "keywords": [],
   "author": "",
@@ -30,12 +30,21 @@
     "leaflet": "^1.7.1",
     "lz-string": "^1.4.4",
     "micromustache": "^8.0.3",
+    "node-sass": "^7.0.1",
     "rimraf": "^3.0.2",
     "safe-buffer": "^5.2.1",
+    "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.60.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "webpack-shell-plugin-next": "^2.2.2"
+    "webpack-shell-plugin-next": "^2.2.2",
+    "workbox-webpack-plugin": "^6.5.2"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "D": "^1.0.0",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.3"
   }
 }

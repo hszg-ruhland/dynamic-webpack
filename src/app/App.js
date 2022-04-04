@@ -16,7 +16,7 @@ class App{
     ShowPageMap(){
         let instance = this;
         if ( this.pageMap === null ){
-            import( /* webpackChunkName: "app" */ './pages/page-map/page-map.css');
+            import( /* webpackChunkName: "app" */ './pages/page-map/page-map.scss');
             import( /* webpackChunkName: "app" */ './pages/page-map/PageMap.js').then( (appModule) => {
                 this.pageMap = new(appModule.PageMap);
                 this.pageMap.SetApp(instance);
@@ -30,7 +30,7 @@ class App{
     ShowPageDashboard(){
         let instance = this;
         if ( this.pageDashboard === null ){
-            import( /* webpackChunkName: "app" */ './pages/page-dashboard/page-dashboard.css');
+            import( /* webpackChunkName: "app" */ './pages/page-dashboard/page-dashboard.scss');
             import( /* webpackChunkName: "app" */ './pages/page-dashboard/PageDashboard.js').then( (appModule) => {
                 this.pageDashboard = new(appModule.PageDashboard);
                 this.pageDashboard.SetApp(instance);
@@ -44,7 +44,7 @@ class App{
     ShowPageLogin(){
         let instance = this;
         if ( this.pageLogin === null ){
-            import( /* webpackChunkName: "app" */ './pages/page-login/page-login.css');
+            import( /* webpackChunkName: "app" */ './pages/page-login/page-login.scss');
             import( /* webpackChunkName: "app" */ './pages/page-login/PageLogin.js').then( (appModule) => {
                 this.pageLogin = new(appModule.PageLogin);
                 this.pageLogin.SetApp(instance);
@@ -58,7 +58,7 @@ class App{
     ShowPageWorkflow(){
         let instance = this;
         if ( this.pageWorkflow === null ){
-            import( /* webpackChunkName: "app" */ './pages/page-workflow/page-workflow.css');
+            import( /* webpackChunkName: "app" */ './pages/page-workflow/page-workflow.scss');
             import( /* webpackChunkName: "app" */ './pages/page-workflow/PageWorkflow.js').then( (appModule) => {
                 this.pageWorkflow = new(appModule.PageWorkflow);
                 this.pageWorkflow.SetApp(instance);

@@ -1,7 +1,7 @@
 // PageLogin.js
 // Module for Login
 // ================
-//import './page-login.css';
+//import './page-login.scss';
 import {Page} from '../Page.js'
 
 
