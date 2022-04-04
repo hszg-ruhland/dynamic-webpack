@@ -19,28 +19,11 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
       let text = "Hallo Klaus";
       app.Init();
-/*      app.tools.LoadEncrypt(global_pubkey_string)
-         .then( (encrypt) => {
-            let encrypted = encrypt.encrypt(text);
-            console.log(text+" encrypted=",encrypted);
-         });
-
-      console.log(text+" bs58=",app.tools.Bs58encode(text));
-      let compressed = app.tools.Compress(text);
-      let orginal = app.tools.Decompress(compressed);
-      console.log(text+" pako=",text);
-
-      let doTtemplate = "<h1>Hi {{=it.foo}}!</h1>";
-      let object = {foo: 'there'};
-      let templateResult = app.tools.Template(doTtemplate,object);
-      console.log(text+" doT=",templateResult);
-*/
       app.ShowPageLogin();
 }
-/*
 if ('serviceWorker' in navigator) {
    window.addEventListener('load', () => {
-     navigator.serviceWorker.register('/sustainable-spa-with-webpack/service-worker.js',{ scope: '/'}).then(registration => {
+     navigator.serviceWorker.register('/dist-pwa/service-worker.js',{ scope: '/'}).then(registration => {
        console.log('SW registered: ', registration);
        init();
      }).catch(registrationError => {
@@ -51,4 +34,3 @@ if ('serviceWorker' in navigator) {
 else {
    document.addEventListener('DOMContentLoaded', init);
 }
-*/

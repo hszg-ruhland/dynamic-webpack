@@ -37,7 +37,7 @@ plugins.push(new WorkboxPlugin.GenerateSW({
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, './src/app.js'),
+    main: path.resolve(__dirname, './src/index.js'),
   },
   output: {
     path: path.resolve(__dirname, './dist-pwa'),
