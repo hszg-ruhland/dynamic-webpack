@@ -45,13 +45,16 @@ plugins.push(new BundleAnalyzerPlugin());
 module.exports = {
   devtool: false,//'source-map',
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    main: path.resolve(__dirname, './src/index.ts'),
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     hashFunction: "xxhash64",
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].dynamic.[contenthash].js',
+  },
+  resolve: {
+    extensions: [ '.ts', '.js'],
   },
   plugins,
   module: {
@@ -71,7 +74,12 @@ module.exports = {
            test: /\.(png|jpg|gif|svg)$/i,
            type: 'asset/inline',
           },        
-        ]
+          {
+            test: /\.tsx?/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+           },        
+         ]
   },
   optimization: {
       runtimeChunk: 'single',

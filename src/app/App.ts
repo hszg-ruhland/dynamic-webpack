@@ -1,7 +1,13 @@
-import {Tools} from '../lib/Tools.js';
+import {Tools} from '../lib/Tools';
 //import {PageMap} from './pages/PageMap.js';
 
 class App{
+    public tools;
+    public pageMap;
+    public pageLogin;
+    public pageDashboard;
+    public pageWorkflow;
+    
     constructor(){
         this.tools = new Tools();
         this.pageMap = null;

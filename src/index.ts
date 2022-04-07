@@ -6,7 +6,7 @@
 
 import './theme/custom.css';
 import './app/app-style.css';
-import {app} from './app/App.js';
+import {app} from './app/App';
 
 const global_pubkey_string = 
 `-----BEGIN PUBLIC KEY-----

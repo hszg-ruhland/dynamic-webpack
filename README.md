@@ -6,3 +6,9 @@ Deletion Modules
 ```
 npm i -D rimraf
 ```
+
+Usage of Typescript
+```
+npm i -D typescript
+npm i -D ts-loader
+```
