@@ -1,0 +1,62 @@
+
+label.app-floating-label-underline { 
+    margin-top: 20px;
+    margin-bottom: 40px;    
+    position:relative; 
+    height: 2.5em;
+}  
+
+label.app-floating-label-underline input:invalid{
+  color: red;
+  border-color: red;
+}
+label.app-floating-label-underline input:valid{
+  color: inherit;
+}
+label.app-floating-label-underline input:invalid ~ span.label{
+  color: red;
+}
+label.app-floating-label-underline input:valid ~ span.label{
+  color: inherit;
+}
+
+
+label.app-floating-label-underline input{
+  padding: 0.3em 0em 0.3em 0em;
+  display: block;
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid;
+  background-color: transparent;
+  font-size: inherit;
+}
+label.app-floating-label-underline input:not(focus){
+  opacity: 0.5;
+}
+label.app-floating-label-underline input:focus { 
+  outline:none; 
+  border-bottom: 2px solid;
+}
+label.app-floating-label-underline span.label{
+  font-size: inherit;
+  position:relative;
+  pointer-events:none;
+  opacity: 0.5;
+  left: 5px;
+  width: max-content;
+  top:-1.4em;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+label.app-floating-label-underline input:focus ~ span.label, label.app-floating-label-underline input:not(:placeholder-shown) ~ span.label 		{
+  top:-5.0em;
+  left: 0px;
+  font-size:0.6em;
+}
+    
+  label.app-floating-label-underline input:focus, label.app-floating-label-underline input:not(:placeholder-shown){
+    opacity: 1.0;
+  }
+
+

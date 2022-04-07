@@ -1,0 +1,63 @@
+
+label.app-floating-label-border { 
+    margin-top: 20px;
+    margin-bottom: 40px;    
+    position:relative; 
+    height: 2.5em;
+}  
+
+label.app-floating-label-border input:invalid{
+  color: red;
+  border-color: red;
+}
+label.app-floating-label-border input:valid{
+  color: inherit;
+}
+label.app-floating-label-border input:invalid ~ span.label{
+  color: red;
+}
+label.app-floating-label-border input:valid ~ span.label{
+  color: inherit;
+}
+
+
+label.app-floating-label-border input{
+  padding: 1.1em 0.2em 0.3em 0.2em;
+  display: block;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: inherit;
+}
+label.app-floating-label-border input:not(focus){
+  opacity: 0.5;
+}
+label.app-floating-label-border input:focus { 
+  outline:none; 
+}
+label.app-floating-label-border span.label{
+  font-size: inherit;
+  position: relative;
+  pointer-events:none;
+  opacity: 0.5;
+  left: 0.3em;
+  width: max-content;
+  top:-1.4em;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+
+label.app-floating-label-border input:focus ~ span.label, label.app-floating-label-border input:not(:placeholder-shown) ~ span.label 		{
+  top:-5.0em;
+  left: 4px;
+  font-size:0.6em;
+}
+    
+  label.app-floating-label-border input:focus, label.app-floating-label-border input:not(:placeholder-shown){
+    opacity: 1.0;
+  }
+
+
