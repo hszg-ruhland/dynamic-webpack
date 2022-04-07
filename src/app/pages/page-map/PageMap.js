@@ -43,7 +43,7 @@ class PageMap extends Page{
             document.body.insertAdjacentHTML('beforeend', this.markup);
             this.page = document.getElementById(this.id);
 
-            instance.app.tools.LoadLeaflet()
+            instance.app.toolsDynamic.LoadLeaflet()
                 .then( (L) => {
                     instance.map_area = document.querySelector("#page-map .leaflet-area");
                     instance.osmLayer = new L.TileLayer(actual_osmurl);
