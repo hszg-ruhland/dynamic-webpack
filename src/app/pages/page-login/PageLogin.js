@@ -3,6 +3,10 @@
 // ================
 //import './page-login.scss';
 import {Page} from '../Page.js'
+import '../../app-input.css'
+import '../../app-floating-label-border.css'
+import '../../app-floating-label-underline.css'
+
 
 
 const page_login_markup =
@@ -25,9 +29,11 @@ const page_login_markup =
 const page_login_step1_markup =
 `<div id="page-login-form-step1" class="container-fluid p-4">
     <h4>Login</h4>  
-    <div class="form-floating mb-2">
-        <input type="email" class="form-control" id="page-login-form-step1-email" placeholder=" ">
-        <label for="page-login-form-step1-email">Email address</label>
+    <div class="app-input">
+        <label class="app-floating-label-underline">
+            <input id="page-login-form-step1-email" type="email" placeholder=" ">
+            <span class="label">Email address</span>
+        </label>
     </div>
     <br>
     <button id="page-login-form-step1-next-button" class="btn btn-primary">Next</button>

@@ -44,15 +44,15 @@ label.app-floating-label-underline span.label{
   opacity: 0.5;
   left: 5px;
   width: max-content;
-  top:-1.4em;
+  top:-1.6em;
   transition:0.2s ease all; 
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
 }
 label.app-floating-label-underline input:focus ~ span.label, label.app-floating-label-underline input:not(:placeholder-shown) ~ span.label 		{
-  top:-5.0em;
+  top:-3.9em;
   left: 0px;
-  font-size:0.6em;
+  font-size:0.8em;
 }
     
   label.app-floating-label-underline input:focus, label.app-floating-label-underline input:not(:placeholder-shown){
