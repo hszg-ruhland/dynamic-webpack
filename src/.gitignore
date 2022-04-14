@@ -1,7 +1,0 @@
-dist/*
-dist-dev/*
-dist-pwa/*
-node_modules
-package-lock.json
-*.map
-*.gz
