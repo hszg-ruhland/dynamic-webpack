@@ -11,16 +11,14 @@ import '../../app-floating-label-underline.css'
 
 const page_login_markup =
 `<div id="page-login" class="app-page">
-    <nav id="page-login-header" class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Sustainability Test Lab</span>
-        </div>
+    <nav id="page-login-header">
+        <span class="title">Sustainability Test Lab</span>
     </nav>
 
-    <div id="page-login-content" class="container-fluid">
-        <div id="page-login-form" class="p-4">
+    <div id="page-login-content">
+        <div id="page-login-form">
         </div>
-        <div id="page-login-image" class="p-4">
+        <div id="page-login-image">
         </div>
     </div>
 </div>`;

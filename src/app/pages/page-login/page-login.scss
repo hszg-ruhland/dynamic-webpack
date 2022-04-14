@@ -3,6 +3,8 @@
 $page-login-text-color: black;
 
 #page-login{    
+    font-size: 24px;
+
     &-header{
         position: absolute;
         top: 0;
@@ -11,6 +13,11 @@ $page-login-text-color: black;
         height: $AppHeaderHeight !important;
         color: $AppHeaderColor !important;
         background-color: $AppHeaderBackgroundColor !important;
+        display: flex;
+    }
+    &-header .title{
+        line-height: $AppHeaderHeight;
+        padding-left: 20px;
     }
     &-content{
         position: absolute;
@@ -28,6 +35,15 @@ $page-login-text-color: black;
         bottom: 0;
         background-color: white;
         color: $page-login-text-color;
+        padding: 20px;
+        overflow-y: auto;
+    }
+    &-form button{
+        width: 200px;
+        height: 40px;
+        border-radius: 4px;
+        font-size: 24px;
+        color: white;
     }
     &-image{
         position: absolute;

@@ -50,7 +50,7 @@ label.app-floating-label-underline span.label{
   -webkit-transition:0.2s ease all;
 }
 label.app-floating-label-underline input:focus ~ span.label, label.app-floating-label-underline input:not(:placeholder-shown) ~ span.label 		{
-  top:-3.9em;
+  top:-3.1em;
   left: 0px;
   font-size:0.8em;
 }
