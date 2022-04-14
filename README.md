@@ -12,3 +12,5 @@ Usage of Typescript
 npm i -D typescript
 npm i -D ts-loader
 ```
+
+## Typscript mit dynamischen Import
