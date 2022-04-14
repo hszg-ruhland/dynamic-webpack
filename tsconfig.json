@@ -2,6 +2,7 @@
     "compilerOptions": {
         "noImplicitAny": false,
         "target": "ES5",
-        "module": "CommonJS",
+        "module": "esnext",
+        "moduleResolution": "node"
     }
 }

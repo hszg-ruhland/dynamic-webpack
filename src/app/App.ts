@@ -9,6 +9,8 @@ class App{
     public pageLogin;
     public pageDashboard;
     public pageWorkflow;
+
+    public bootstrap;
     
     constructor(){
         this.toolsStatic = new ToolsStatic();
@@ -39,11 +41,15 @@ class App{
     ShowPageDashboard(){
         let instance = this;
         if ( this.pageDashboard === null ){
-            import( /* webpackChunkName: "app" */ './pages/page-dashboard/page-dashboard.scss');
-            import( /* webpackChunkName: "app" */ './pages/page-dashboard/PageDashboard.js').then( (appModule) => {
-                this.pageDashboard = new(appModule.PageDashboard);
-                this.pageDashboard.SetApp(instance);
-                this.pageDashboard.Show();     
+            import( /* webpackChunkName: "btcss" */ '../theme/custom.scss');//bootstrap/dist/css/bootstrap.min.css');
+            import( /* webpackChunkName: "btsrc" */ 'bootstrap/dist/js/bootstrap.min.js').then( (bootstrapModule) => {
+                this.bootstrap = bootstrapModule.default;
+                import( /* webpackChunkName: "app" */ './pages/page-dashboard/page-dashboard.scss');
+                import( /* webpackChunkName: "app" */ './pages/page-dashboard/PageDashboard.js').then( (appModule) => {
+                    this.pageDashboard = new(appModule.PageDashboard);
+                    this.pageDashboard.SetApp(instance);
+                    this.pageDashboard.Show();     
+                });
             });
         }
         else {

@@ -97,8 +97,8 @@ module.exports = {
             name: "encode"
           },
           bootstrapVendor: {
-            test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
-            name: "bootstrap"
+            test: /[\\/]node_modules[\\/](@popperjs)[\\/]/,
+            name: "btextra"
           },
         },
       },

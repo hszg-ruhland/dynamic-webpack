@@ -1,4 +1,5 @@
 
+import {app} from '../app/App';
 import {Modal} from 'bootstrap';
 
 function MsgOkCancel(msg_string, ok_function, cancel_function){
@@ -25,7 +26,7 @@ function MsgOkCancel(msg_string, ok_function, cancel_function){
   document.body.insertAdjacentHTML('beforeend',msgbox_markup);
   let okButton = document.querySelector('#msgbox .ok-button');
   let cancelButton = document.querySelector('#msgbox .cancel-button');
-  let msgboxModal = new Modal(document.getElementById('msgbox'), { backdrop: "static"});
+  let msgboxModal = new app.bootstrap.Modal(document.getElementById('msgbox'), { backdrop: "static"});
 
   okButton.addEventListener("click",function(){
     let modal = document.getElementById('msgbox');

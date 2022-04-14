@@ -8,8 +8,10 @@
 
 class ToolsDynamic{
     public encrypt;
+    public bootstrap;
     constructor(){
         this.encrypt = null;
+        this.bootstrap = null;
     }
     LoadEncrypt(pubkey){
         let instance = this;

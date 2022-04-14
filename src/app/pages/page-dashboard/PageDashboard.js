@@ -1,6 +1,5 @@
 import {Page} from '../Page.js'
 import {MsgOkCancel} from '../../../lib/MsgBox.js'
-import {Drowpdown} from 'bootstrap'
 
 const page_dashboard_markup =
 `      
@@ -124,7 +123,8 @@ class PageDashboard extends Page{
         this.markup = page_dashboard_markup;
     }
     Init(){
-        let page_elem = document.getElementById(this.id);
+      let instance = this;
+      let page_elem = document.getElementById(this.id);
         if ( page_elem === null ){
             document.body.insertAdjacentHTML('beforeend', this.markup);
             this.page = document.getElementById(this.id);

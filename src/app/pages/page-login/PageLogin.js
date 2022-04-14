@@ -44,9 +44,11 @@ const page_login_step1_markup =
 const page_login_step2_markup =
 `<div id="page-login-form-step2" class="container-fluid p-4">
     <h5 id="page-login-form-step2-text" class="mb-2"></h5>
-    <div class="form-floating mb-2">
-        <input type="password" class="form-control" id="page-login-form-step2-password" placeholder=" ">
-        <label for="page-login-form-step2-password">Password</label>
+    <div class="app-input">
+        <label class="app-floating-label-underline">
+            <input id="page-login-form-step2-password" type="password" placeholder=" ">
+            <span class="label">Password</span>
+        </label>
     </div>
     <br>    
     <button id="page-login-form-step2-next-button"  class="btn btn-primary">Next</button>
@@ -57,9 +59,11 @@ const page_login_step2_markup =
 const page_login_step3_markup =
 `<div id="page-login-form-step3" class="container-fluid p-4">
     <h5 id="page-login-form-step3-text" class="mb-2"></h5>
-    <div class="form-floating mb-2">
-        <input type="password" class="form-control" id="page-login-form-step3-2passcode" placeholder=" ">
-        <label for="page-login-form-step3-2passcode">2 Pass Code</label>
+    <div class="app-input">
+        <label class="app-floating-label-underline">
+            <input id="page-login-form-step3-passcode" type="text" placeholder=" ">
+            <span class="label">Passcode</span>
+        </label>
     </div>
     <br>    
     <button id="page-login-form-step3-start-button"  class="btn btn-primary">Start</button>
@@ -68,29 +72,41 @@ const page_login_step3_markup =
 const page_login_signup_markup =
 `<div id="page-login-form-signup" class="container-fluid p-4">
         <h5 id="page-login-form-signup-text">Registration</h5>  
-        <div class="form-floating mb-2">
-            <input type="email" class="form-control" id="page-login-form-signup-email" placeholder=" ">
-            <label for="page-login-form-signup-email">Email *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-email" type="email" placeholder=" ">
+                <span class="label">Email *</span>
+            </label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="page-login-form-signup-firstname" placeholder=" ">
-            <label for="page-login-form-signup-firstname">First Name *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-firstname" type="text" placeholder=" ">
+                <span class="label">First Name *</span>
+            </label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="page-login-form-signup-lastname" placeholder=" ">
-            <label for="page-login-form-signup-lastname">Last Name *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-lastname" type="text" placeholder=" ">
+                <span class="label">Last Name *</span>
+            </label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="page-login-form-signup-mobile" placeholder=" ">
-            <label for="page-login-form-signup-mobile">Mobile *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-mobile" type="text" placeholder=" ">
+                <span class="label">Mobile *</span>
+            </label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="password" class="form-control" id="page-login-form-signup-password" placeholder=" ">
-            <label for="page-login-form-signup-password">Password *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-password" type="password" placeholder=" ">
+                <span class="label">Password *</span>
+            </label>
         </div>
-        <div class="form-floating mb-2">
-            <input type="password" class="form-control" id="page-login-form-signup-confirmpassword" placeholder=" ">
-            <label for="page-login-form-signup-confirmpassword">Confirm Password *</label>
+        <div class="app-input">
+            <label class="app-floating-label-underline">
+                <input id="page-login-form-signup-confirmpassword" type="password" placeholder=" ">
+                <span class="label">Confirm Password *</span>
+            </label>
         </div>
     <button id="page-login-form-signup-start-button"  class="btn btn-primary">Continue</button>
 </div>`;

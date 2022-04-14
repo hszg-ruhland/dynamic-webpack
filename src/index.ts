@@ -4,7 +4,7 @@
    use http://www.imageoptimizer.net for images
 */
 
-import './theme/custom.css';
+//import './theme/custom.css';
 import './app/app-style.css';
 import {app} from './app/App';
 
