@@ -42,8 +42,8 @@ class App{
         let instance = this;
         if ( this.pageDashboard === null ){
             import( /* webpackChunkName: "btcss" */ '../theme/custom.scss');//bootstrap/dist/css/bootstrap.min.css');
-            import( /* webpackChunkName: "btsrc" */ 'bootstrap/dist/js/bootstrap.min.js').then( (bootstrapModule) => {
-                this.bootstrap = bootstrapModule.default;
+            import( /* webpackChunkName: "btsrc" */ 'bootstrap').then( (bootstrapModule) => {
+                this.bootstrap = bootstrapModule;
                 import( /* webpackChunkName: "app" */ './pages/page-dashboard/page-dashboard.scss');
                 import( /* webpackChunkName: "app" */ './pages/page-dashboard/PageDashboard.js').then( (appModule) => {
                     this.pageDashboard = new(appModule.PageDashboard);

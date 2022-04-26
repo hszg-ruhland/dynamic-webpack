@@ -21,6 +21,7 @@ function init() {
       app.Init();
       app.ShowPageLogin();
 }
+/*
 if ('serviceWorker' in navigator) {
    window.addEventListener('load', () => {
      navigator.serviceWorker.register('/dist-pwa/service-worker.js',{ scope: '/'}).then(registration => {
@@ -34,3 +35,4 @@ if ('serviceWorker' in navigator) {
 else {
    document.addEventListener('DOMContentLoaded', init);
 }
+*/
