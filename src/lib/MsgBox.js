@@ -7,7 +7,7 @@ function MsgOkCancel(msg_string, ok_function, cancel_function){
   <div class="modal fade" id="msgbox" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary">
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close cancel-button" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>

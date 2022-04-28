@@ -23,7 +23,7 @@ const plugins = [];
 plugins.push(new CompressionPlugin());
 plugins.push(new HtmlWebpackPlugin({
   inject: false,
-  favicon: './src/favicon.svg',
+  favicon: './src/favicon.ico',
   templateContent: ({htmlWebpackPlugin}) => `
     <html>
       <head>
@@ -45,11 +45,10 @@ plugins.push(new CspHtmlWebpackPlugin({
 
 //plugins.push(new BundleAnalyzerPlugin());
 
-
 module.exports = {
-  //devtool: false,//'source-map',
+  //devtool: false,//'source-map', auskommentiert für development
   entry: {
-    main: path.resolve(__dirname, './src/index.js'),
+    main: path.resolve(__dirname, './src/index.ts'),
   },
   output: {
     path: path.resolve(__dirname, './dist-dev'),
@@ -57,49 +56,58 @@ module.exports = {
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].dynamic.[contenthash].js',
   },
+  resolve: {
+    extensions: [ '.ts', '.js'],
+  },
   plugins,
   module: {
-    rules: [
-      {
-        test: /\.(scss|css)$/i,
-        use: [{
-          loader: "style-loader",
-          options: {
-            attributes: {
-              nonce: "appnonce",
-            },
-          },
-        }, "css-loader", "sass-loader"],
-      }, 
-      {
-       test: /\.(png|jpg|gif|svg)$/i,
-       type: 'asset/inline',
-      },        
-    ]
-},
-optimization: {
-  runtimeChunk: 'single',
-  splitChunks: {
-    chunks: 'all',
-    maxInitialRequests: Infinity,
-    minSize: 0,
-    cacheGroups: {
-      baseVendor: {
-        test: /[\\/]node_modules[\\/](style-loader|css-loader|lz-string)[\\/]/,
-        name: "base"
-      },
-      encodeVendor: {
-        test: /[\\/]node_modules[\\/](safe-buffer|buffer|ieee754|base-x|base64-js)[\\/]/,
-        name: "encode"
-      },
-      bootstrapVendor: {
-        test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
-        name: "bootstrap"
-      },
-    },
+        rules: [
+          {
+            test: /\.(scss|css)$/i,
+            use: [{
+              loader: "style-loader",
+              options: {
+                attributes: {
+                  nonce: "appnonce",
+                },
+              },
+            }, "css-loader", "sass-loader"],
+          }, 
+          {
+           test: /\.(png|jpg|gif|svg)$/i,
+           type: 'asset/inline',
+          },        
+          {
+            test: /\.tsx?/,
+            use: 'ts-loader',
+            exclude: /node_modules/,
+           },        
+         ]
   },
-},    
+  optimization: {
+      runtimeChunk: 'single',
+      splitChunks: {
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          baseVendor: {
+            test: /[\\/]node_modules[\\/](style-loader|css-loader|lz-string)[\\/]/,
+            name: "base"
+          },
+          encodeVendor: {
+            test: /[\\/]node_modules[\\/](safe-buffer|buffer|ieee754|base-x|base64-js)[\\/]/,
+            name: "encode"
+          },
+          bootstrapVendor: {
+            test: /[\\/]node_modules[\\/](@popperjs)[\\/]/,
+            name: "btextra"
+          },
+        },
+      },
+  },    
 }
+
 
 /*
       vendor: {

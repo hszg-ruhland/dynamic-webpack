@@ -14,3 +14,7 @@ npm i -D ts-loader
 ```
 
 ## Typscript mit dynamischen Import
+
+## favicon 
+
+Konvertierung von favicon.svg nach favicon.ico mit https://convertio.co/

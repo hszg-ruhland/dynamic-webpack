@@ -24,7 +24,7 @@ const plugins = [];
 plugins.push(new CompressionPlugin());
 plugins.push(new HtmlWebpackPlugin({
   inject: false,
-  favicon: './src/favicon.svg',
+  favicon: './src/favicon.ico',
   templateContent: ({htmlWebpackPlugin}) => `
     <html>
       <head>

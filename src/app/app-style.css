@@ -30,6 +30,3 @@ body{
 .app-invisible {
   display: none!important;
 }
-
-/* Bootstrap overrides */
-.btn-primary { background-color: darkgreen !important; }
