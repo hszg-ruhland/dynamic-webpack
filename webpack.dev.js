@@ -3,20 +3,20 @@
 // destination is ./dist
 // compression article: https://medium.com/@poshakajay/heres-how-i-reduced-my-bundle-size-by-90-2e14c8a11c11
 
+// external in package.json use npm rimraf to cleanup dist directory
 // use dynamic lazy loading for leaflet
 // scss should be compiled in vsc
 
 const path = require('path');
-const fs = require('fs');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // for building compression files .gz
 const CompressionPlugin = require("compression-webpack-plugin");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const plugins = [];
 
@@ -36,22 +36,23 @@ plugins.push(new HtmlWebpackPlugin({
     </html>
   `
 }));
-/*
-plugins.push(new CspHtmlWebpackPlugin({
-  'script-src': '',
-  'style-src': ''
+plugins.push( new MiniCssExtractPlugin({
+  // Options similar to the same options in webpackOptions.output
+  // both options are optional
+  filename: "[name].css", // bei dev ändern
+  chunkFilename: "[name].dynamic.css", // bei dev ändern
 }));
-*/
 
-//plugins.push(new BundleAnalyzerPlugin());
+// plugins.push(new BundleAnalyzerPlugin());
+
 
 module.exports = {
-  //devtool: false,//'source-map', auskommentiert für development
+  // devtool: false,  bei dev ganze zeile auskommentieren
   entry: {
     main: path.resolve(__dirname, './src/index.ts'),
   },
   output: {
-    path: path.resolve(__dirname, './dist-dev'),
+    path: path.resolve(__dirname, './dist-dev'), // bei dev dist-dev eintragen
     hashFunction: "xxhash64",
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].dynamic.[contenthash].js',
@@ -62,6 +63,7 @@ module.exports = {
   plugins,
   module: {
         rules: [
+          /*
           {
             test: /\.(scss|css)$/i,
             use: [{
@@ -73,6 +75,16 @@ module.exports = {
               },
             }, "css-loader", "sass-loader"],
           }, 
+          */
+          {
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "postcss-loader",
+              "sass-loader",
+            ],
+          },
           {
            test: /\.(png|jpg|gif|svg)$/i,
            type: 'asset/inline',
@@ -81,8 +93,8 @@ module.exports = {
             test: /\.tsx?/,
             use: 'ts-loader',
             exclude: /node_modules/,
-           },        
-         ]
+          },        
+        ]
   },
   optimization: {
       runtimeChunk: 'single',
@@ -108,39 +120,38 @@ module.exports = {
   },    
 }
 
-
 /*
-      vendor: {
-        test: /[\\/]node_modules[\\/](!buffer)(!basex-encoder)(!base64-js)(!ieee754)(!jsencrypt)[\\/]/,
-        name(module) {
-          // get the name. E.g. node_modules/packageName/not/this/part.js
-          // or node_modules/packageName
-          const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-
-          // npm package names are URL-safe, but some servers don't like @ symbols
-          return `npm.${packageName.replace('@', '')}`;
-        },
-      },
+          vendor: {
+            test: /[\\/]node_modules[\\/](!buffer)(!basex-encoder)(!base64-js)(!ieee754)(!jsencrypt)[\\/]/,
+            name(module) {
+              // get the name. E.g. node_modules/packageName/not/this/part.js
+              // or node_modules/packageName
+              const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+  
+              // npm package names are URL-safe, but some servers don't like @ symbols
+              return `npm.${packageName.replace('@', '')}`;
+            },
+          },
 */
 
 /* for vendor specific output 
 cacheGroups: {
-  reactVendor: {
-    test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-    name: "reactvendor"
-  },
-  utilityVendor: {
-    test: /[\\/]node_modules[\\/](lodash|moment|moment-timezone)[\\/]/,
-    name: "utilityVendor"
-  },
-  bootstrapVendor: {
-    test: /[\\/]node_modules[\\/](react-bootstrap)[\\/]/,
-    name: "bootstrapVendor"
-  },
-  vendor: {
-    test: /[\\/]node_modules[\\/](!react-bootstrap)(!lodash)(!moment)(!moment-timezone)[\\/]/,
-    name: "vendor"
-  },
-},
+      reactVendor: {
+        test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+        name: "reactvendor"
+      },
+      utilityVendor: {
+        test: /[\\/]node_modules[\\/](lodash|moment|moment-timezone)[\\/]/,
+        name: "utilityVendor"
+      },
+      bootstrapVendor: {
+        test: /[\\/]node_modules[\\/](react-bootstrap)[\\/]/,
+        name: "bootstrapVendor"
+      },
+      vendor: {
+        test: /[\\/]node_modules[\\/](!react-bootstrap)(!lodash)(!moment)(!moment-timezone)[\\/]/,
+        name: "vendor"
+      },
+    },
 */
 

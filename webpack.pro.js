@@ -17,6 +17,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const WebpackShellPluginNext = require('webpack-shell-plugin-next');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// bei dev auskommentieren
 
 const plugins = [];
 
@@ -39,20 +40,20 @@ plugins.push(new HtmlWebpackPlugin({
 plugins.push( new MiniCssExtractPlugin({
   // Options similar to the same options in webpackOptions.output
   // both options are optional
-  filename: "[name].[contenthash].css",
-  chunkFilename: "[name].dynamic.[contenthash].css",
+  filename: "[name].[contenthash].css", // bei dev ändern
+  chunkFilename: "[name].dynamic.[contenthash].css", // bei dev ändern
 }));
 
-plugins.push(new BundleAnalyzerPlugin());
+plugins.push(new BundleAnalyzerPlugin()); // bei dev auskommentieren
 
 
 module.exports = {
-  devtool: false,//'source-map',
+  devtool: false, // bei dev ganze zeile auskommentieren
   entry: {
     main: path.resolve(__dirname, './src/index.ts'),
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist'), // bei dev dist-dev eintragen
     hashFunction: "xxhash64",
     filename: '[name].[contenthash].js',
     chunkFilename: '[name].dynamic.[contenthash].js',
