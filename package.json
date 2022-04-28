@@ -30,6 +30,7 @@
     "leaflet": "^1.7.1",
     "lz-string": "^1.4.4",
     "micromustache": "^8.0.3",
+    "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
     "rimraf": "^3.0.2",
     "safe-buffer": "^5.2.1",

@@ -8,10 +8,9 @@
 // scss should be compiled in vsc
 
 const path = require('path');
-const fs = require('fs');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CspHtmlWebpackPlugin = require('csp-html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // for building compression files .gz
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -37,7 +36,12 @@ plugins.push(new HtmlWebpackPlugin({
     </html>
   `
 }));
-
+plugins.push( new MiniCssExtractPlugin({
+  // Options similar to the same options in webpackOptions.output
+  // both options are optional
+  filename: "[name].[contenthash].css",
+  chunkFilename: "[name].dynamic.[contenthash].css",
+}));
 
 plugins.push(new BundleAnalyzerPlugin());
 
@@ -59,6 +63,7 @@ module.exports = {
   plugins,
   module: {
         rules: [
+          /*
           {
             test: /\.(scss|css)$/i,
             use: [{
@@ -70,6 +75,16 @@ module.exports = {
               },
             }, "css-loader", "sass-loader"],
           }, 
+          */
+          {
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              "css-loader",
+              "postcss-loader",
+              "sass-loader",
+            ],
+          },
           {
            test: /\.(png|jpg|gif|svg)$/i,
            type: 'asset/inline',
@@ -78,8 +93,8 @@ module.exports = {
             test: /\.tsx?/,
             use: 'ts-loader',
             exclude: /node_modules/,
-           },        
-         ]
+          },        
+        ]
   },
   optimization: {
       runtimeChunk: 'single',
