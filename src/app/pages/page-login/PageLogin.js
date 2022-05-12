@@ -2,7 +2,7 @@
 // Module for Login
 // ================
 //import './page-login.scss';
-import {Page} from '../Page.js'
+import {Page} from '../Page'
 import '../../app-input.css'
 import '../../app-floating-label-border.css'
 import '../../app-floating-label-underline.css'
@@ -34,8 +34,8 @@ const page_login_step1_markup =
         </label>
     </div>
     <br>
-    <button id="page-login-form-step1-next-button" class="btn btn-primary">Next</button>
-    <button id="page-login-form-step1-signup-button"  class="btn btn-secondary">Registrate</button>
+    <button id="page-login-form-step1-next-button" class="app-primary">Next</button>
+    <button id="page-login-form-step1-signup-button"  class="app-secondary">Registrate</button>
 </div>`;
 
 // Step2 with password input and Next button
@@ -49,8 +49,8 @@ const page_login_step2_markup =
         </label>
     </div>
     <br>    
-    <button id="page-login-form-step2-next-button"  class="btn btn-primary">Next</button>
-    <button id="page-login-form-step2-pwforgotten-button"  class="btn btn-secondary">Password forgotten</button>
+    <button id="page-login-form-step2-next-button"  class="app-primary">Next</button>
+    <button id="page-login-form-step2-pwforgotten-button"  class="app-secondary">Password forgotten</button>
 </div>`;
 
 // Step3 with Two Pass code input and Start button
@@ -64,7 +64,7 @@ const page_login_step3_markup =
         </label>
     </div>
     <br>    
-    <button id="page-login-form-step3-start-button"  class="btn btn-primary">Start</button>
+    <button id="page-login-form-step3-start-button"  class="app-primary">Start</button>
 </div>`;
 
 const page_login_signup_markup =
@@ -106,7 +106,7 @@ const page_login_signup_markup =
                 <span class="label">Confirm Password *</span>
             </label>
         </div>
-    <button id="page-login-form-signup-start-button"  class="btn btn-primary">Continue</button>
+    <button id="page-login-form-signup-start-button"  class="app-primary">Continue</button>
 </div>`;
 
 

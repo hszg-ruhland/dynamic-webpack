@@ -1,4 +1,4 @@
-import {Page} from '../Page.js'
+import {Page} from '../Page'
 import {MsgOkCancel} from '../../../lib/MsgBox.js'
 
 const page_dashboard_markup =

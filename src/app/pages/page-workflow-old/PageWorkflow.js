@@ -1,4 +1,4 @@
-import {Page} from '../Page.js'
+import {Page} from '../Page'
 
 const page_orderlist_markup =
 `      

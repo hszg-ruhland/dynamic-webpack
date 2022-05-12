@@ -1,6 +1,6 @@
 import {ToolsStatic} from '../lib/ToolsStatic';
 import {ToolsDynamic} from '../lib/ToolsDynamic';
-//import {PageMap} from './pages/PageMap.js';
+import {Page} from './pages/Page';
 
 class App{
     public toolsStatic;
@@ -15,10 +15,10 @@ class App{
     constructor(){
         this.toolsStatic = new ToolsStatic();
         this.toolsDynamic = new ToolsDynamic();
-        this.pageMap = null;
-        this.pageLogin = null;
-        this.pageDashboard = null;
-        this.pageWorkflow = null;
+        this.pageMap = Page;
+        this.pageLogin = Page;
+        this.pageDashboard = Page;
+        this.pageWorkflow = Page;
     }
     Init(){
         let test=1;

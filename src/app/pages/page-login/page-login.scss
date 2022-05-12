@@ -1,6 +1,16 @@
 @import '../../_constants';
 
-$page-login-text-color: black;
+$PageLoginHeaderBackgroundColor: darkgreen;
+$PageLoginHeaderColor: white;
+$PageLoginBackgroundColor: white;
+$PageLoginTextColor: black;
+$PageLoginPrimaryButtonColor: darkgreen;
+$PageLoginPrimaryButtonTextColor: white;
+$PageLoginSecondaryButtonColor: gray;
+$PageLoginSecondaryButtonTextColor: white;
+
+
+
 
 #page-login{    
     font-size: 24px;
@@ -11,8 +21,8 @@ $page-login-text-color: black;
         left: 0;
         right: 0;
         height: $AppHeaderHeight !important;
-        color: $AppHeaderColor !important;
-        background-color: $AppHeaderBackgroundColor !important;
+        color: $PageLoginHeaderColor !important;
+        background-color: $PageLoginHeaderBackgroundColor !important;
         display: flex;
     }
     &-header .title{
@@ -34,16 +44,31 @@ $page-login-text-color: black;
         right: 50%;
         bottom: 0;
         background-color: white;
-        color: $page-login-text-color;
+        color: $PageLoginTextColor;
         padding: 20px;
         overflow-y: auto;
     }
-    &-form button{
-        width: 200px;
+    &-form button.app-primary{
+        min-width: 200px;
+        width: auto;
         height: 40px;
         border-radius: 4px;
         font-size: 24px;
-        color: white;
+        color: $PageLoginPrimaryButtonTextColor;
+        background-color: $PageLoginPrimaryButtonColor;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &-form button.app-secondary{
+        min-width: 200px;
+        width: auto;
+        height: 40px;
+        border-radius: 4px;
+        font-size: 24px;
+        color: $PageLoginSecondaryButtonTextColor;
+        background-color: $PageLoginSecondaryButtonColor;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     &-image{
         position: absolute;

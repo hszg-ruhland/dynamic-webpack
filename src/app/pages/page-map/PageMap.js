@@ -1,6 +1,6 @@
 //import {TileLayer,Map,LatLng} from 'leaflet';
 //import '../external/leaflet/dist/leaflet.css';
-import {Page} from '../Page.js'
+import {Page} from '../Page'
 
 const page_map_markup =
 `      
