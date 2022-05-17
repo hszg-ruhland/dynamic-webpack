@@ -1,5 +1,5 @@
 import {Page} from '../Page'
-import {MsgOkCancel} from '../../../lib/MsgBox.js'
+import {MsgOkCancel} from '../../../lib/MsgBox'
 
 const page_dashboard_markup =
 `      
@@ -152,15 +152,15 @@ class PageDashboard extends Page{
         let map = document.getElementById("page-dashboard-side-menu-map");
         map.addEventListener("click",function(e){
             e.preventDefault();
-            instance.app.ShowPageMap();
+            instance.appDynamic.ShowPageMap();
         });
         let cell_link1 = document.getElementById("page-dashboard-cell1-link");
         cell_link1.addEventListener("click",function(e){
-            instance.app.ShowPageWorkflow();
+            instance.appDynamic.ShowPageWorkflow();
         });
         let cell_link2 = document.getElementById("page-dashboard-cell2-link");
         cell_link2.addEventListener("click",function(e){
-            instance.app.ShowPageWorkflow();
+            instance.appDynamic.ShowPageWorkflow();
         });
 
     }

@@ -6,7 +6,7 @@
 
 //import './theme/custom.css';
 import './app/app-style.css';
-import {app} from './app/App';
+import {appStatic} from './app/AppStatic';
 
 const global_pubkey_string = 
 `-----BEGIN PUBLIC KEY-----
@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
       let text = "Hallo Klaus";
-      app.Init();
-      app.ShowPageLogin();
+      appStatic.Init();
+      appStatic.ShowPageLogin();
 }
 /*
 if ('serviceWorker' in navigator) {

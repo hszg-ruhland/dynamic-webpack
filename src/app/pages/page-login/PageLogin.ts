@@ -112,6 +112,9 @@ const page_login_signup_markup =
 
 
 class PageLogin extends Page{
+    private map_area;
+    private username: string;
+
     constructor(){
         super("page-login");
         this.map_area = null;
@@ -135,13 +138,15 @@ class PageLogin extends Page{
         let loginform = document.getElementById("page-login-form");
         loginform.insertAdjacentHTML('beforeend', page_login_step1_markup);
         document.getElementById("page-login-form-step1-next-button").addEventListener("click",event => {
-            this.username = document.querySelector("#page-login-form-step1-email").value;
+            const inputUsername: HTMLInputElement = document.querySelector("#page-login-form-step1-email");
+            this.username = inputUsername.value;
             let step1=document.getElementById("page-login-form-step1");
             step1.parentNode.removeChild(step1);
             this.ShowStep2();
         });
         document.getElementById("page-login-form-step1-signup-button").addEventListener("click",event => {
-            this.username = document.querySelector("#page-login-form-step1-email").value;
+            const inputUsername: HTMLInputElement = document.querySelector("#page-login-form-step1-email");
+            this.username = inputUsername.value;
             let step1=document.getElementById("page-login-form-step1");
             step1.parentNode.removeChild(step1);
             this.ShowSignup();
@@ -163,7 +168,7 @@ class PageLogin extends Page{
         form.insertAdjacentHTML('beforeend', page_login_step3_markup);
         document.getElementById("page-login-form-step3-text").innerHTML="SMS 2-Pass-Code";
         document.getElementById("page-login-form-step3-start-button").addEventListener("click",event => {
-            instance.app.ShowPageDashboard();//app.ShowPageMap();
+            instance.appStatic.LoadAppDynamic();//app.ShowPageMap();
         });    
     }
     ShowSignup(){
