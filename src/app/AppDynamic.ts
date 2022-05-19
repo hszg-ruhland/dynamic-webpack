@@ -2,6 +2,9 @@ import {ToolsDynamic} from '../lib/ToolsDynamic';
 import {PageMap} from './pages/page-map/PageMap';
 import {PageDashboard} from './pages/page-dashboard/PageDashboard';
 import {PageWorkflow} from './pages/page-workflow/PageWorkflow';
+import 'bootstrap';
+import '../theme/custom.scss';
+
 import './pages/page-map/page-map.scss';
 import './pages/page-dashboard/page-dashboard.scss';
 import './pages/page-workflow/page-workflow.scss';
@@ -40,19 +43,15 @@ class AppDynamic{
     }
     ShowPageDashboard(){
         let instance = this;
-        import( /* webpackChunkName: "btjs" */ 'bootstrap').then(()=>{
-            import( /* webpackChunkName: "btcss" */ '../theme/custom.scss').then(()=>{
-                if ( instance.pageDashboard === null ){
-                    instance.pageDashboard = new(PageDashboard);
-                    instance.pageDashboard.SetAppDynamic(instance);
-                    instance.pageDashboard.SetAppStatic(this.appStatic);
-                    instance.pageDashboard.Show();     
-             }
-                else {
-                    instance.pageDashboard.Show();     
-                }        
-            });
-        });
+        if ( instance.pageDashboard === null ){
+            instance.pageDashboard = new(PageDashboard);
+            instance.pageDashboard.SetAppDynamic(instance);
+            instance.pageDashboard.SetAppStatic(this.appStatic);
+            instance.pageDashboard.Show();     
+        }
+        else {
+            instance.pageDashboard.Show();     
+        }        
     }
     ShowPageWorkflow(){
         let instance = this;

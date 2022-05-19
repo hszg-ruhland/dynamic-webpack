@@ -112,9 +112,15 @@ module.exports = {
             test: /[\\/]node_modules[\\/](safe-buffer|buffer|ieee754|base-x|base64-js)[\\/]/,
             name: "encode"
           },
+<<<<<<< HEAD
 /*          bootstrapVendor: {
             test: /[\\/]node_modules[\\/](@popperjs)[\\/]/,
             name: "btextra"
+=======
+          bootstrapVendor: {
+            test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
+            name: "bootstrap" 
+>>>>>>> 44195fe (test)
           },
         */
         },
