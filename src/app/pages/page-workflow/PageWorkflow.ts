@@ -46,9 +46,9 @@ const page_orderlist_markup =
 
 
 class PageWorkflow extends Page{
+    public markup: string;
     constructor(){
         super("page-workflow");
-        this.map_area = null;
         this.markup = page_orderlist_markup;
     }
     Init(){

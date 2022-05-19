@@ -27,6 +27,11 @@ let actual_osmurl = satellite_osmurl;
 //import '../external/leaflet/dist/leaflet.css';
 
 class PageMap extends Page{
+    public map_area;
+    public markup: string;
+    public map;
+    public osmLayer;
+    
     constructor(){
         super("page-map");
         this.map_area = null;

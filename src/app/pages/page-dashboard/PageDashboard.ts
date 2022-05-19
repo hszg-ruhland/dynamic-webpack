@@ -117,9 +117,9 @@ const page_dashboard_markup =
 
 
 class PageDashboard extends Page{
+    public markup: string;
     constructor(){
         super("page-dashboard");
-        this.map_area = null;
         this.markup = page_dashboard_markup;
     }
     Init(){

@@ -64,19 +64,6 @@ module.exports = {
   plugins,
   module: {
         rules: [
-          /*
-          {
-            test: /\.(scss|css)$/i,
-            use: [{
-              loader: "style-loader",
-              options: {
-                attributes: {
-                  nonce: "appnonce",
-                },
-              },
-            }, "css-loader", "sass-loader"],
-          }, 
-          */
           {
             test: /\.(sa|sc|c)ss$/,
             use: [
@@ -112,17 +99,10 @@ module.exports = {
             test: /[\\/]node_modules[\\/](safe-buffer|buffer|ieee754|base-x|base64-js)[\\/]/,
             name: "encode"
           },
-<<<<<<< HEAD
-/*          bootstrapVendor: {
-            test: /[\\/]node_modules[\\/](@popperjs)[\\/]/,
-            name: "btextra"
-=======
           bootstrapVendor: {
             test: /[\\/]node_modules[\\/](bootstrap|@popperjs)[\\/]/,
-            name: "bootstrap" 
->>>>>>> 44195fe (test)
+            name: "bootstrap"
           },
-        */
         },
       },
   },    
