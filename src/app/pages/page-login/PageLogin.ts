@@ -12,7 +12,7 @@ import '../../app-floating-label-underline.css'
 const page_login_markup =
 `<div id="page-login" class="app-page">
     <nav id="page-login-header">
-        <span class="title">Sustainability Test Lab</span>
+        <span class="title">Sustainability Lab by Klaus Ruhland</span>
     </nav>
 
     <div id="page-login-content">
@@ -26,7 +26,7 @@ const page_login_markup =
 // Step1 with email input and Next button
 const page_login_step1_markup =
 `<div id="page-login-form-step1" class="container-fluid p-4">
-    <h4>Login</h4>  
+    <div class="page-login-form-title">Login</div>  
     <div class="app-input">
         <label class="app-floating-label-underline">
             <input id="page-login-form-step1-email" type="email" placeholder=" ">
@@ -41,7 +41,7 @@ const page_login_step1_markup =
 // Step2 with password input and Next button
 const page_login_step2_markup =
 `<div id="page-login-form-step2" class="container-fluid p-4">
-    <h5 id="page-login-form-step2-text" class="mb-2"></h5>
+    <div id="page-login-form-step2-text" class="mb-2 page-login-form-title"></h5>
     <div class="app-input">
         <label class="app-floating-label-underline">
             <input id="page-login-form-step2-password" type="password" placeholder=" ">
@@ -56,7 +56,7 @@ const page_login_step2_markup =
 // Step3 with Two Pass code input and Start button
 const page_login_step3_markup =
 `<div id="page-login-form-step3" class="container-fluid p-4">
-    <h5 id="page-login-form-step3-text" class="mb-2"></h5>
+    <div id="page-login-form-step3-text" class="mb-2 page-login-form-title"></div>
     <div class="app-input">
         <label class="app-floating-label-underline">
             <input id="page-login-form-step3-passcode" type="text" placeholder=" ">
@@ -69,7 +69,7 @@ const page_login_step3_markup =
 
 const page_login_signup_markup =
 `<div id="page-login-form-signup" class="container-fluid p-4">
-        <h5 id="page-login-form-signup-text">Registration</h5>  
+        <div id="page-login-form-signup-text" class="page-login-form-title">Registration</div>  
         <div class="app-input">
             <label class="app-floating-label-underline">
                 <input id="page-login-form-signup-email" type="email" placeholder=" ">

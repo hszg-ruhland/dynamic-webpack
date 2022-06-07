@@ -28,6 +28,7 @@ $PageLoginSecondaryButtonTextColor: white;
     &-header .title{
         line-height: $AppHeaderHeight;
         padding-left: 20px;
+        font-weight: bold;
     }
     &-content{
         position: absolute;
@@ -47,6 +48,12 @@ $PageLoginSecondaryButtonTextColor: white;
         color: $PageLoginTextColor;
         padding: 20px;
         overflow-y: auto;
+    }
+    &-form .page-login-form-title{
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding-top: 20px;
+        padding-bottom: 40px;
     }
     &-form button.app-primary{
         min-width: 200px;
@@ -76,11 +83,11 @@ $PageLoginSecondaryButtonTextColor: white;
         left: 50%;
         right: 0;
         bottom: 0;
-        background-color: lightgreen;
-        background-image: url(../../images/pixabay-green-globe.jpg);
-        background-size: cover;
-        background-position: bottom;
-        background-repeat: no-repeat;
+        background-color: #005500;
+        background-image: url(../../images/pngegg-energy-saving.png), url(../../images/pngegg-green-city.png);
+        background-size: 30%, contain;
+        background-position: center, bottom;
+        background-repeat: no-repeat, no-repeat;
     }
 }
 
