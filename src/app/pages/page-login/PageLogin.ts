@@ -41,7 +41,7 @@ const page_login_step1_markup =
 // Step2 with password input and Next button
 const page_login_step2_markup =
 `<div id="page-login-form-step2" class="container-fluid p-4">
-    <div id="page-login-form-step2-text" class="mb-2 page-login-form-title"></h5>
+    <div id="page-login-form-step2-text" class="mb-2 page-login-form-title"></div>
     <div class="app-input">
         <label class="app-floating-label-underline">
             <input id="page-login-form-step2-password" type="password" placeholder=" ">
